@@ -12,3 +12,13 @@ class Controle:
     def novo_projeto(self, id: str, nome: str, descricao: str = 'Sem descrição.'):
         self.projetos.append(Projeto(id, nome, descricao))
     
+    def listar_projetos(self):
+        print('Projetos ativos:')
+        for projeto in self.projetos:
+            print(projeto)
+    
+    def listar_funcionarios(self):
+        print('Funcionários cadastrados:')
+        for funcionario in self.funcionarios:
+            print(funcionario)
+    
