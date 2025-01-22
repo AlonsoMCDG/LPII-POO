@@ -42,8 +42,7 @@ if __name__ == '__main__':
     bancoDoBrasil.fechar_agencia()
     bancoDoBrasil.listar_contas()
     bancoDoBrasil.realizar_emprestimo(numero_conta='12', id_emprestimo='13', valor=10000, numero_parcelas=10)
-    
-    conta = bancoDoBrasil.buscar_conta('12')
+    bancoDoBrasil.pagar_emprestimo(numero_conta='12', id_emprestimo='13', parcelas=2)
 
-    print(bancoDoBrasil.contas)
+    
     

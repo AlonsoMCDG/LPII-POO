@@ -7,13 +7,9 @@ class Emprestimo:
         self.parcelas_pagas = 0
     
     
-    def pagar_parcela(self) -> bool:
-        if self.parcelas_pagas >= self.parcelas_totais:
-            return False
-        
-        self.parcelas_pagas += 1
-        return True
-    
+    def pagar(self, parcelas: int):
+        self.parcelas_pagas += parcelas
+
 
     def __str__(self):
         print(f'id={self.id} | valor: R$ {self.valor_total: ,.2f}, | parcelas: {self.parcelas_pagas} / {self.parcelas_totais}')

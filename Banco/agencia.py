@@ -45,11 +45,14 @@ class Agencia:
             print('Conta não encontrada')
             return False
 
-        conta.realizar_emprestimo(id=id_emprestimo, valor=valor, parcelas=numero_parcelas)
+        conta.realizar_emprestimo(id_emprestimo, valor, numero_parcelas)
         return True
     
     
-    def pagar_emprestimo():
+    def pagar_emprestimo(self, numero_conta: str, id_emprestimo: str, parcelas: int):
+        conta = self.buscar_conta(numero_conta)
+        return conta.pagar_emprestimo(id_emprestimo, parcelas)
+        
     
     def encerrar_conta(self, numero: str) -> bool:
         for i in range(len(self.contas) - 1, -1, -1):

@@ -34,13 +34,26 @@ class Conta:
         return None
     
     
-    def pagar_parcela(self, id_emprestimo: str) -> bool:
-        emprestimo = self.buscar_emprestimo(id=id_emprestimo)
+    def pagar_emprestimo(self, id_emprestimo: str, parcelas: int) -> bool:
+        emprestimo = self.buscar_emprestimo(id_emprestimo)
+
+        if emprestimo is None:
+            return False  # não achou o empréstimo com o id fornecido
         
-        if self.saldo >= emprestimo.valor_parcela:
-            if emprestimo.pagar_parcela():
-                self.saldo -= emprestimo.valor_parcela
-                return True
+        parcelas_restantes = emprestimo.parcelas_totais - emprestimo.parcelas_pagas
+
+        # Não paga parcelas a mais do que falta
+        parcelas = min(parcelas, parcelas_restantes)
+
+        if parcelas <= 0:
+            return False  # Não há nada para pagar
+
+        quantia_a_pagar = emprestimo.valor_parcela * parcelas
+        
+        if self.saldo >= quantia_a_pagar:  # Se há saldo
+            self.saldo -= emprestimo.valor_parcela
+            emprestimo.pagar()
+            return True  # Conseguiu pagar as parcelas do empréstimo
         
         return False
     
