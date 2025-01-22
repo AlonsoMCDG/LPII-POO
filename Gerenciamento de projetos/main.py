@@ -22,14 +22,15 @@
 #    Permita remover a associação entre um funcionário
 # e um projeto
 
-from funcionario import Funcionario
-from projeto import Projeto
+from controle import Controle
 
 if __name__ == '__main__':
-    func1 = Funcionario('001-A', 'Alan Santana', 'CEO')
-    func2 = Funcionario('102-J', 'Joaquim Augusto', 'QA')
+    sistema = Controle()
     
-    proj1 = Projeto('20250400013', 'Web Project', 'Desenvolvimento de uma aplicação para a Web')
+    sistema.novo_funcionario('001-A', 'Alan Santana', 'CEO')
+    sistema.novo_funcionario('102-J', 'Joaquim Augusto', 'QA')
+    
+    sistema.novo_projeto('20250400013', 'Web Project', 'Desenvolvimento de uma aplicação para a Web')
     
     
     
