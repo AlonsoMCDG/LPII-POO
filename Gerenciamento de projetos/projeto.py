@@ -7,6 +7,5 @@ class Projeto:
         self.descricao: str = descricao
         self.funcionarios: list[FuncionarioProjeto] = []
     
-    
     def __str__(self):
         return f'{self.id} {self.nome}'

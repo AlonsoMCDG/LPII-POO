@@ -9,7 +9,6 @@ class FuncionarioProjeto:
         self.projeto: Projeto = projeto
         self.data_inicio: datetime = data_inicio
     
-    
     def __str__(self):
         return f'{self.funcionario} é {self.papel} em {self.projeto}'
     
