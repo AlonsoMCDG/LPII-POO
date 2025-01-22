@@ -14,11 +14,13 @@ class Controle:
     
     def listar_projetos(self):
         print('Projetos ativos:')
-        for projeto in self.projetos:
-            print(projeto)
+        t = len(str(len(self.projetos)))
+        for i, projeto in enumerate(self.projetos):
+            print(f'{i: >{t}}. {projeto}')
     
     def listar_funcionarios(self):
         print('Funcionários cadastrados:')
-        for funcionario in self.funcionarios:
-            print(funcionario)
+        t = len(str(len(self.funcionarios)))
+        for i, funcionario in enumerate(self.funcionarios):
+            print(f'{i: >{t}}. {funcionario}')
     

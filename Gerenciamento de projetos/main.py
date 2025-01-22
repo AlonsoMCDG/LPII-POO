@@ -32,5 +32,6 @@ if __name__ == '__main__':
     
     sistema.novo_projeto('20250400013', 'Web Project', 'Desenvolvimento de uma aplicação para a Web')
     
-    
+    sistema.listar_funcionarios()
+    sistema.listar_projetos()
     
