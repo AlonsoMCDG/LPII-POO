@@ -1,4 +1,4 @@
-# 3) Crie um sistema para gerencias projetos e 
+# 3) Crie um sistema para gerenciar projetos e 
 # funcionários. O sistema deve permitir que:
 #    -  Um funcionário participe de vários projetos.
 #    -  Um projeto possa ter vários funcionários.
